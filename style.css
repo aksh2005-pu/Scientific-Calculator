@@ -1,0 +1,104 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif; /* sticking with something modern & readable */
+}
+
+body {
+  background: #f0f4f8; /* light gray-blue for default mode */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.3s ease; /* helps with smooth theme switch */
+}
+
+/* Calculator container */
+.calculator {
+  background-color: #1e1e2f;
+  padding: 20px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+/* Theme toggle button */
+#toggleMode {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #3a3a4f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Display (readonly input) */
+#display {
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  text-align: right;
+  background-color: #2e2e3e;
+  color: #ffffff;
+  /* maybe add glow on focus later if editable */
+}
+
+/* Button grid area */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* standard layout */
+  gap: 10px;
+}
+
+/* Generic button styles */
+button {
+  padding: 20px;
+  font-size: 18px;
+  background-color: #3a3a4f;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #52527a;
+}
+
+
+/* --- Light Mode Styling Overrides --- */
+body.light {
+  background-color: #ffffff; /* cleaner look for light mode */
+}
+
+body.light .calculator {
+  background-color: #e0e0e0;
+}
+
+body.light #display {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+/* Light mode buttons */
+body.light button,
+body.light #toggleMode {
+  background-color: #d4d4d4;
+  color: #000;
+}
+
+body.light button:hover,
+body.light #toggleMode:hover {
+  background-color: #c0c0c0; /* darker on hover but still light */
+}
